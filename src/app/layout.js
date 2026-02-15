@@ -1,6 +1,7 @@
 import Footers from "@/components/layouts/Footers";
 import Navbar from "@/components/layouts/Navbar";
 import { Poppins } from "next/font/google";
+import localFont from 'next/font/local';
 import "./globals.css";
 
 
@@ -9,6 +10,12 @@ const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
+
+export const fontBangla = localFont(
+  {
+    src: "../fonts/mayaboti-normal.ttf"
+  }
+)
 
 export const metadata = {
   title: "Create Next App",
