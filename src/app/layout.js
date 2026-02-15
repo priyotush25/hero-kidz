@@ -3,14 +3,10 @@ import Navbar from "@/components/layouts/Navbar";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 
-// const poppins = Poppins({
-//   subsets: ["latin"],
-//   weight: ["100", "200", "400", "500", "600", "800"],
-// });
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["100","200","300","400","500","600","700","800","900"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
 
@@ -23,17 +19,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${poppins.className} antialiased`}>
-        <header>
-          <Navbar/>
+        <header className="py-2 md:w-11/12 mx-auto">
+          <Navbar />
         </header>
-        <main className="py-2 md:w-11/12 mx-auto">
-           {children}
-        </main>
+        <main className="py-2 md:w-11/12 mx-auto">{children}</main>
         <footer>
-          <Footers/>
+          <Footers />
         </footer>
-  
-        </body>
+      </body>
     </html>
   );
 }
