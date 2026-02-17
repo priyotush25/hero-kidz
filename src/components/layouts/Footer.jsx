@@ -1,9 +1,10 @@
-import Logo from "../logo/Logo";
+import React from "react";
+import Logo from "./Logo";
 
-const Footers = () => {
+const Footer = () => {
   return (
     <div>
-      <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content p-10">
+      <div className="footer sm:footer-horizontal bg-neutral text-neutral-content p-10">
         <Logo></Logo>
         <nav>
           <h6 className="footer-title">Services</h6>
@@ -25,9 +26,9 @@ const Footers = () => {
           <a className="link link-hover">Privacy policy</a>
           <a className="link link-hover">Cookie policy</a>
         </nav>
-      </footer>
+      </div>
     </div>
   );
 };
 
-export default Footers;
+export default Footer;

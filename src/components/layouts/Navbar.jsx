@@ -1,69 +1,67 @@
+import React from "react";
+import Logo from "./Logo";
 import Link from "next/link";
-import { BiCart } from "react-icons/bi";
-import NavLinks from "../buttons/NavLinks";
-import Logo from "../logo/Logo";
+import NavLink from "../buttons/NavLink";
+import { FiShoppingCart } from "react-icons/fi";
+import AuthButtons from "../buttons/AuthButtons";
 
 const Navbar = () => {
   const nav = (
     <>
       <li>
-        <NavLinks href={"/"}>Home</NavLinks>
+        <Link href={"/"}>Home</Link>
       </li>
-            <li>
-        <NavLinks href={"/product"}>Products</NavLinks>
+      <li>
+        <NavLink href={"/products"}>Products</NavLink>
       </li>
-            <li>
-        <NavLinks href={"/blog"}>Blog</NavLinks>
+      <li>
+        <NavLink href={"/blog"}>blog</NavLink>
       </li>
-            <li>
-        <NavLinks href={"/contact"}>Contact</NavLinks>
+      <li>
+        <NavLink href={"/contact"}>Contact</NavLink>
       </li>
     </>
   );
-
   return (
-    <div className="navbar bg-base-100 ">
-      <div className="navbar-start">
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+    <div>
+      <div className="navbar bg-base-100 ">
+        <div className="navbar-start">
+          <div className="dropdown">
+            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                {" "}
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />{" "}
+              </svg>
+            </div>
+            <ul
+              tabIndex="-1"
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
-              {" "}
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />{" "}
-            </svg>
+              {nav}
+            </ul>
           </div>
-          <ul
-            tabIndex="-1"
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
-          >
-           {nav}
-
-          </ul>
+          <Logo></Logo>
         </div>
-        <Logo />
-      </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-         {nav}
-        </ul>
-      </div>
-      <div className="navbar-end space-x-4">
-        <Link href={"/cart"} className="btn btn-primary">
-          <BiCart/>
-        </Link>
-        <Link href={"/login"}>
-        <button className="btn btn-primary btn-outline">Login</button>
-        </Link>
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal px-1">{nav}</ul>
+        </div>
+        <div className="navbar-end space-x-4">
+          <Link href={"/cart"} className="btn btn-primary">
+            <FiShoppingCart></FiShoppingCart>
+          </Link>
+          <AuthButtons></AuthButtons>
+        </div>
       </div>
     </div>
   );
